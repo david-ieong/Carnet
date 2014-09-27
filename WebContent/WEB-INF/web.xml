@@ -34,4 +34,15 @@
     <servlet-name>ListContactServlet</servlet-name>
     <url-pattern>/ListContactServlet</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>RemoveContactServlet</display-name>
+    <servlet-name>RemoveContactServlet</servlet-name>
+    <servlet-class>controller.RemoveContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveContactServlet</servlet-name>
+    <url-pattern>/RemoveContactServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

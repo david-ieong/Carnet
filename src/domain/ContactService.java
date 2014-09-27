@@ -22,4 +22,10 @@ public class ContactService {
 		return daoc.listContact();
 	}
 
+	public boolean removeContact(Long id) {
+		DAOContact daoc = new DAOContact();
+		int res = daoc.deleteContact(id);
+		return res != 0;
+	}
+
 }
