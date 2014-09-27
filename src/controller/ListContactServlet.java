@@ -33,16 +33,16 @@ public class ListContactServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		ContactService cs = new ContactService();
 		List<Contact> contacts = cs.listContact();
+
+		response.getWriter().write("Liste des contacts ");
 		if (contacts != null) {
 			for (Contact c : contacts) {
-				response.getWriter().print(
-						String.format(" ", c.getId(), c.getFirstName(),
-								c.getLastName(), c.getEmail()));
-				response.getWriter().print("\n");
+				System.err.println(c.toString());
+				response.getWriter().print(c + "\n");
 			}
 		} else {
-			response.getWriter().print(
-					"Mille milliards de mille millions de mille sabords	! j'ai pas pu lister les contacts");
+			response.getWriter()
+					.print("Mille milliards de mille millions de mille sabords	! j'ai pas pu lister les contacts");
 		}
 	}
 

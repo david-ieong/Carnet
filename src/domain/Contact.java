@@ -42,6 +42,23 @@ public class Contact {
 	public void setId(long id){
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Contact [firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", id=");
+		builder.append(id);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 	
 	
 }
