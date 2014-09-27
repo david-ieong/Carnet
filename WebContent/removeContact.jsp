@@ -7,6 +7,22 @@
 <title>Remove contact</title>
 </head>
 <body>
-
+	<form method="post" action="RemoveContactServlet">
+		<table align='center'>
+			<!-- table in year 2014, yep -->
+			<tr>
+				<td>id</td>
+				<td><input type="text" name="idContact" value=""></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="submit" name="submit"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="reset" value="reset" name="reset"></td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>
