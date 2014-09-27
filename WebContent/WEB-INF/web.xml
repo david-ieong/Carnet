@@ -16,16 +16,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>NewContact</display-name>
-    <servlet-name>NewContact</servlet-name>
-    <servlet-class>controller.NewContact</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>NewContact</servlet-name>
-    <url-pattern>/NewContact</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>AddContactServlet</display-name>
     <servlet-name>AddContactServlet</servlet-name>
     <servlet-class>controller.AddContactServlet</servlet-class>
