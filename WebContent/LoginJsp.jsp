@@ -7,14 +7,17 @@
 <title>Login Welcome</title>
 </head>
 <body>
-<% 	String name = (String)request.getParameter("name");
+
+<% 	if (null != request) {
+	String name = (String)request.getParameter("name");
 	String password = (String)request.getParameter("password");
 	if (name.equals("caca") && password.equals("caca")) {%>
 	<h2> Hello <%=name %>, your password is <%=password%> !!</h2>
 <%} else { %>
 	<jsp:forward page="index.html"></jsp:forward>	
-<%	}
+<%	}} else {
 %>
-	
+	<jsp:forward page="index.html"></jsp:forward>
+	<%} %>
 </body>
 </html>
