@@ -34,10 +34,9 @@ public class ListContactServlet extends HttpServlet {
 		ContactService cs = new ContactService();
 		List<Contact> contacts = cs.listContact();
 
-		response.getWriter().write("Liste des contacts ");
+		response.getWriter().write("Liste des contacts\n");
 		if (contacts != null) {
 			for (Contact c : contacts) {
-				System.err.println(c.toString());
 				response.getWriter().print(c + "\n");
 			}
 		} else {
