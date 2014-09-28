@@ -22,7 +22,7 @@ public class Database {
 			Connection con = connect();
 			Statement s = con.createStatement();
 			//s.execute("drop table if exists contacts");
-			s.execute("CREATE TABLE if not exists contacts(id integer, firstname VARCHAR(20), lastname VARCHAR(20), email VARCHAR(20))");
+			s.execute("CREATE TABLE if not exists contacts(id integer NOT NULL AUTO_INCREMENT, firstname VARCHAR(20), lastname VARCHAR(20), email VARCHAR(20), PRIMARY KEY (id))");
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
