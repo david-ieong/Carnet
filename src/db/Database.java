@@ -19,7 +19,7 @@ public class Database {
 			Connection con = connect();
 			Statement s = con.createStatement();
 			s.execute("drop table if exists contacts");
-			s.execute("create table contacts(id integer, firstname string, lastname string, email string)");
+			s.execute("create table if not exists contacts(id integer, firstname string, lastname string, email string)");
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -27,8 +27,8 @@ public class Database {
 
 	public static Connection connect(String filename) throws SQLException,
 			ClassNotFoundException {
-		Class.forName("org.sqlite.JDBC");
-		return DriverManager.getConnection("jdbc:sqlite:" + filename);
+		Class.forName("org.mysql.JDBC");
+		return DriverManager.getConnection("jdbc:mysql:" + filename);
 	}
 
 	public static Connection connect() throws SQLException,
