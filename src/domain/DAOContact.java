@@ -28,13 +28,13 @@ public class DAOContact implements IDAOContact {
 
 		Connection con = null;
 		try {
-			Class.forName(Messages.getString("driver"));
-			con = DriverManager.getConnection(Messages.getString("database"),
-			 Messages.getString("username"), Messages.getString("password"));
-			//con = Database.connect();
+//			Class.forName(Messages.getString("driver"));
+//			con = DriverManager.getConnection(Messages.getString("database"),
+//			 Messages.getString("username"), Messages.getString("password"));
+			con = Database.connect();
 			Statement stmt = con.createStatement();
 			
-			stmt.execute("CREATE TABLE if not exists contacts(id integer, firstname VARCHAR(20), lastname VARCHAR(20), email VARCHAR(20))");
+			
 			String request = "INSERT INTO contacts(id, firstname,lastname,email) VALUES("
 					+ idContact
 					+ ", '"
@@ -67,7 +67,7 @@ public class DAOContact implements IDAOContact {
 			// Class.forName(Messages.getString("driver"));
 			// con = DriverManager.getConnection(Messages.getString("database"),
 			// Messages.getString("username"), Messages.getString("password"));
-			con = Database.connect();
+			con = Database.connect("carnet");
 			Statement stmt = con.createStatement();
 			String request = "DELETE FROM contacts WHERE id = " + id;
 			success = stmt.executeUpdate(request);
